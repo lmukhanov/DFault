@@ -26,5 +26,7 @@ European Union through the UniServer Project (Grant Agreement
 688540) – http://www.uniserver2020.eu.
 ![alt text](images/horizon2020-eu-commission-logo-8.png)
 <img src="images/uniserver.jpg" alt="drawing" width="300"/>
+
 <img src="images/qub_logo.jpg" alt="drawing" width="300"/>
+
 <img src="images/ecit_logo.png" alt="drawing" width="300"/>
