@@ -1,6 +1,4 @@
-<p align="center">
-  <img images/system_failure.jpg>
-</p>
+<img align="center" src="images/system_failure.jpg">
 --------------------------------------------------
 DFault v.0.1.
 --------------------------------------------------
