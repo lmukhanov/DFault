@@ -19,8 +19,9 @@ How to run?:
  ...
 
 --------------------
-Acknowledgement:<img src="images/uniserver.jpg" alt="drawing" width="150"/>
+Acknowledgement:
 --------------------
+<img src="images/uniserver.jpg" alt="drawing" width="100"/>
 This work is funded by the H2020 Framework Program of the
 European Union through the UniServer Project (Grant Agreement
 688540) – http://www.uniserver2020.eu.
