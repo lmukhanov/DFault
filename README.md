@@ -1,4 +1,6 @@
-![alt text](images/system_failure.jpg)
+<p align="center">
+  <img images/system_failure.jpg>
+</p>
 --------------------------------------------------
 DFault v.0.1.
 --------------------------------------------------
