@@ -2,6 +2,49 @@
 import sys
 import pickle
 
+def dfault_pue_predict():
+  filename = 'scaler_DRAM_model_PUE.sav'
+  scaler = pickle.load(open(filename, 'rb'))
+
+  filename = 'KNN_DRAM_model_PUE.sav'
+  clf_classes= pickle.load(open(filename, 'rb'))
+
+  print "Predict PUE"
+  print "Input data"
+  print "-----------"
+  reads=float(sys.argv[2])
+
+  print "Rate of reads per clock "+str(reads)
+  reads=reads*1.0e+5
+
+  writes=float(sys.argv[3])
+  print "Rate of writes per clock "+str(writes)
+  writes=writes*1.0e+5
+
+  refresh_period=float(sys.argv[4])
+  print "Refresh_period "+str(refresh_period)
+  refresh_period=refresh_period*1.0e+3
+
+  temperature=float(sys.argv[5])
+  print "Temperature "+str(temperature)
+  temperature=temperature+3.0
+
+  print "-----------"
+
+  X_test=[]
+  vec=[]
+  vec.append(reads)
+  vec.append(writes)
+  vec.append(refresh_period)
+  vec.append(temperature)
+
+
+  X_test.append(vec)
+  X_test_scale=scaler.transform(X_test)
+  print X_test
+  print "-----------"
+  print "PUE " + str((float(clf_classes.predict(X_test_scale))-1.0))
+
 def dfault_wer_predict_short():
   filename = 'scaler_DRAM_model_WER_short.sav'
   scaler = pickle.load(open(filename, 'rb'))
@@ -130,13 +173,14 @@ def dfault_intput_parameters():
   print "./dfault.py WER 0.004406 0.0009 1.783 60"
   print "\n"
   print "---------------"
-  print "2.    PUE - the rate of single-bit errors. To estimate WER run dfault.py with the following parameters:"
+  print "2.    PUE - the probability of an Unocrrectable Error (>2 bit errors). To estimate PUE run dfault.py with the following parameters:"
   print "i)    PUE"
   print "ii)   Rate of reads per clock"
-  print "iii)  Rate of idle cycles"
-  print "iv)   Rate of writes per clock"
-  print "vii)  Refresh preiod"
-  print "viii) The DRAM temperature"
+  print "iii)  Rate of writes per clock"
+  print "iv)   Refresh preiod"
+  print "v)    The DRAM temperature"
+  print "\nExample "
+  print "./dfault.py PUE 0.004406 0.0009 1.783 60"
   sys.exit()
 
 print "------------"
@@ -151,5 +195,10 @@ else:
         dfault_wer_predict()
      elif len(sys.argv) == 6:
         dfault_wer_predict_short()
+     else:
+        dfault_intput_parameters()
+  elif (sys.argv[1] == "PUE"):
+     if len(sys.argv) == 6:
+        dfault_pue_predict()
      else:
         dfault_intput_parameters()
