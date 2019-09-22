@@ -1,4 +1,25 @@
 #!/usr/bin/python
+
+
+# Copyright (c) 2019 Lev Mukhanov, CSIT, Queen's University Belfast, UK
+# Contact: l.mukhanov@qub.ac.uk
+# Contact: IP Management (ipmanagement@qub.ac.uk)
+# If you use this code please cite:
+# "Workload-Aware DRAM Error Predicion Using Machine Learing", IISWC, 2019
+# 
+# This software is licensed for research and non-commercial use only.
+# 
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
 import sys
 import pickle
 
@@ -41,7 +62,6 @@ def dfault_pue_predict():
 
   X_test.append(vec)
   X_test_scale=scaler.transform(X_test)
-  print X_test
   print "-----------"
   print "PUE " + str((float(clf_classes.predict(X_test_scale))-1.0))
 
@@ -84,7 +104,6 @@ def dfault_wer_predict_short():
 
   X_test.append(vec)
   X_test_scale=scaler.transform(X_test)
-  print X_test
   print "-----------"
   print "WER " + str((float(clf_classes.predict(X_test_scale))/1.5e+9))
 
@@ -140,7 +159,6 @@ def dfault_wer_predict():
 
   X_test.append(vec)
   X_test_scale=scaler.transform(X_test)
-  print X_test
   print "-----------"
   print "WER " + str((float(clf_classes.predict(X_test_scale))/1.5e+9))
 
