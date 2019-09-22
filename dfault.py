@@ -5,7 +5,7 @@
 # Contact: l.mukhanov@qub.ac.uk
 # Contact: IP Management (ipmanagement@qub.ac.uk)
 # If you use this code please cite:
-# "Workload-Aware DRAM Error Predicion Using Machine Learing", IISWC, 2019
+# "Workload-Aware DRAM Error Prediction Using Machine Learing", IISWC, 2019
 # 
 # This software is licensed for research and non-commercial use only.
 # 
