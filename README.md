@@ -16,7 +16,7 @@ The detailed description of the tool is provided in the following paper:
 --------------------
 How to run?:
 --------------------
- ...
+./dfault.py
 
 --------------------
 Acknowledgement:
