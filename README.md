@@ -1,4 +1,4 @@
-<img align="center" src="images/system_failure.jpg">
+<img align="center" src="images/system_failure_iiswc.jpg">
 
 --------------------------------------------------
 DFault v.0.1.
